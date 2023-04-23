@@ -1,9 +1,8 @@
 import React from "react";
-import { findPostBySlug } from "../src/common";
 import DisplayContent from "../src/components/DisplayContent";
 import { Content } from "../src/types";
 
-const about = () => {
+const About = () => {
   const content: Content = {
     title: "About",
     date: "",
@@ -42,4 +41,4 @@ const about = () => {
   return <DisplayContent content={content} />;
 };
 
-export default about;
+export default About;

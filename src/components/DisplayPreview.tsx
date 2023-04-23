@@ -4,7 +4,13 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import { Content } from "../types";
 import { calculateReadingTime } from "../common";
 
-const DisplayPreview = ({ content }: { content: Content | undefined }) => {
+const DisplayPreview = ({
+  content,
+  idx,
+}: {
+  content: Content | undefined;
+  idx: number;
+}) => {
   if (!content) {
     return null;
   }
@@ -14,8 +20,11 @@ const DisplayPreview = ({ content }: { content: Content | undefined }) => {
   });
 
   const { slug, tags, title, thumbNail } = content;
+
+  const isFirst = idx === 0;
+
   return (
-    <Box display="flex" flexDirection="column">
+    <Box alignItems="center" display="flex" flexDirection="column">
       <Link href={`/posts/${slug}`}>
         <Box maxW={200}>
           <img src={thumbNail} alt={title} />

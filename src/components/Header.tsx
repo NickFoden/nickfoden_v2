@@ -1,6 +1,6 @@
-"use client";
 import { Link } from "@chakra-ui/next-js";
 import { Box, Heading, Text } from "@chakra-ui/react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -8,6 +8,12 @@ const Header = () => {
   const isHome = router.pathname === "/";
   return (
     <>
+      <Head>
+        <title>Nick Foden</title>
+        <meta name="description" content="Push those walls back 🤘😎🤘" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {isHome ? (
         <Box display="flex" margin="16px 0">
           <Box margin="0 auto">

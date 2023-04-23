@@ -10,12 +10,22 @@ interface ContentImage {
   type: "image";
 }
 
+interface ContentLink {
+  href: string;
+  text: string;
+  type: "a";
+}
+
 interface ContentParagraph {
   type: "p";
   text: string;
 }
 
-export type ContentItem = ContentImage | ContentParagraph | ContentHeading;
+export type ContentItem =
+  | ContentHeading
+  | ContentImage
+  | ContentLink
+  | ContentParagraph;
 
 export interface Content {
   data: ContentItem[];

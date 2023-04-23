@@ -46,6 +46,15 @@ const DisplayContent = ({ content }: { content: Content | undefined }) => {
                 </Box>
               );
             }
+            if (item.type === "a") {
+              return (
+                <Box maxW={500} margin="0 auto 16px">
+                  <Link href={item.href} key={index}>
+                    <Text key={index}>{item.text}</Text>
+                  </Link>
+                </Box>
+              );
+            }
           })}
         </Box>
         <Box margin="16px auto 32px">
